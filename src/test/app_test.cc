@@ -1902,10 +1902,10 @@ TEST(AutotrackerRule, Matches) {
     a.SetDaysOfWeek(0);
     ASSERT_FALSE(a.Matches(ev));
 
-    a.SetDaysOfWeek(std::bitset<7>("1111100").to_ulong()); // weekdays
+    a.SetDaysOfWeek(std::bitset<7>("0111110").to_ulong()); // weekdays
     ASSERT_TRUE(a.Matches(ev));
 
-    a.SetDaysOfWeek(std::bitset<7>("1111000").to_ulong()); // Monday - Thursday
+    a.SetDaysOfWeek(std::bitset<7>("0111100").to_ulong()); // Monday - Thursday
     ASSERT_FALSE(a.Matches(ev));
 }
 
